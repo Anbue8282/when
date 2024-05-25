@@ -17,8 +17,13 @@ function hinhchunhat(cd , cr){
         };
 
 }
+// aroư function
 const objhcn = (w,h)=> new Object({w:w,h:h,cv:(w+h)*2,dt:w*h});
 console.log(hinhchunhat(6,5))
 
 
 console.log(objhcn(6,5))
+
+//deu tra ve obj 
+const a = new Number(12);
+console.log(typeof null);

@@ -69,7 +69,7 @@
 // console.log(a++);
 
 //cac chan co it nhat 1 lan thuc hien lenh trong do
-let i = 0;
+// let i = 0;
 // do {
 //     ++i;
 
@@ -84,16 +84,16 @@ let i = 0;
 // * nUll
 // * NaN
 //  */
-let userInput = "";
-while (!userInput) {
-    userInput = Number.parseInt(prompt("Nhap tuoi"));
-    // kiem tra so nguyen va so duong
-    if(Number.isInteger(userInput)&& Number.parseInt(userInput)>0){
-        document.write(userInput);
-        break;
+// let userInput = "";
+// while (!userInput) {
+//     userInput = Number.parseInt(prompt("Nhap tuoi"));
+//     // kiem tra so nguyen va so duong
+//     if(Number.isInteger(userInput)&& Number.parseInt(userInput)>0){
+//         document.write(userInput);
+//         break;
 
-    } else{
-        userInput='';
+//     } else{
+//         userInput='';
      
-    }
-}
+//     }
+//}

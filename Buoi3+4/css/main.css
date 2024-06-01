@@ -6,6 +6,38 @@ body{
 
 main{
     margin-top: 45px;
+    /* margin: 45px 20px 0 20px; */
     padding: 0 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+}
+#search-bar{
+    width: 400px;
+
+}
+
+#product-list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap:20px;
+    padding: 0 40px;
+
+
+
+
+}
+/* responsive */
+@media screen and (max-width:720px) {
+    #search-bar {
+        width:200px;
+    }
+    #product-list{
+        grid-template-columns: auto auto;
+        padding: 0 10px;
+    }
     
 }

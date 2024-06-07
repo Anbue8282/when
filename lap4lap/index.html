@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lap 4</title>
+</head>
+<body>
+    <!-- Bài 1 -->
+    <button onclick="saveData()">Lưu dữ liệu</button>
+    <button onclick="searchAndUpdateData()">Tìm kiếm và cập nhật dữ liệu</button>
+    <button onclick="deleteData()">Xóa một dữ liệu cụ thể</button>
+    <button onclick="clearAllData()">Xóa toàn bộ dữ liệu</button>
+
+<!-- Bài 2 -->
+    <div id="countdown"></div>
+
+
+    <!-- Bài 3 -->
+    <img id="slideShow" src="image1.jpg" alt="Hình ảnh 1" width="400" height="300">
+
+    <script>
+        const images = [
+            'https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5kiBqTcIOmXcAsQi6ufb1zgVYtqKfbCTVzA&s',
+            'https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-beautiful-nature-wallpapers-image_2686855.jpg'
+        ];
+
+        let currentImage = 0;
+        setInterval(() => {
+            currentImage = (currentImage + 1) % images.length;
+            document.getElementById("slideShow").src = images[currentImage];
+        }, 3000);
+    </script>
+
+    <!-- Bai 4 -->
+    <h1 id="wordDisplay">Click 'Start' to begin</h1>
+    <input type="text" id="userInput" placeholder="Type the word here">
+    <button onclick="checkWord()">Start</button>
+
+    <script>
+        const words = ["apple", "banana", "cherry", "date", "fig", "grape", "kiwi", "lemon", "mango", "orange"];
+        let currentWord = "";
+        let wordDisplay = document.getElementById("wordDisplay");
+        let userInput = document.getElementById("userInput");
+
+        function getRandomWord() {
+            return words[Math.floor(Math.random() * words.length)];
+        }
+
+        function checkWord() {
+            let enteredWord = userInput.value.trim().toLowerCase();
+            if (enteredWord === currentWord) {
+                wordDisplay.textContent = "Bạn trả lời đúng!";
+            } else {
+                wordDisplay.textContent = "Bạn trả lời sai!";
+            }
+            userInput.value = "";
+            setTimeout(() => {
+                currentWord = getRandomWord();
+                wordDisplay.textContent = currentWord;
+            }, 1000);
+        }
+
+        userInput.onkeypress = function(event) {
+            if (event.key === "Enter") {
+                checkWord();
+            }
+        };
+
+        // Initial word display
+        currentWord = getRandomWord();
+        wordDisplay.textContent = currentWord;
+    </script>
+
+
+    <!-- Bài 5 -->
+    <h1>Loi_bai_hat</h1>
+    <p id="lyrics"></p>
+
+    <script>
+        const lyrics = [
+        "Tuyết trắng xóa rơi rơi trên thân liễu sầu",
+            "Lấp kín lối nơi rừng núi cao",
+            "Chấp nét bút, thơ ai ngân lên ngất trời",
+            "Từ chốn nhân chạm thiên",
+            "Nàng tiên nhân ta đây thân vốn tiểu sinh dưới trần",
+            "Mệnh thiên ban ngàn đời cấm ngăn tiên ái nhân",
+            "Mặc lời trời, duyên kia đan hồng tơ kéo ta đến gần",
+            "Tuy nhất niệm được ở bên vẹn thương nhớ",
+            "Tiếng đàn phát lên tiễn đưa",
+            "Trời ban chiếu thu hồi",
+            "Nữ thần trái quy",
+            "Phạt trăm năm xa cách",
+            "Chàng vượt chông gai, mây mù giăng tứ phương",
+            "Muôn trùng xa để đến bên ai",
+            "Đường xa xăm ta vẫn sẽ cứ đi dù tình ngang trái",
+            "Nhặt trăm hoa, kết đôi lời",
+            "Có bao năm kiếp này",
+            "Nguyện bên em dẫu sai ý trời",
+            "Nàng tiên nhân ta đây thân vốn tiểu sinh dưới trần",
+            "Mệnh thiên ban ngàn đời cấm ngăn tiên ái nhân",
+            "Mặc lời trời duyên kia đan hồng tơ kéo ta đến gần",
+            "Tuy nhất niệm được ở bên vẹn thương nhớ",
+            "Tiếng đàn phát lên tiễn đưa",
+            "Trời ban chiếu thu hồi",
+            "Nữ thần trái quy",
+            "Phạt trăm năm xa cách",
+            "Chàng vượt chông gai, mây mù giăng tứ phương",
+            "Muôn trùng xa để đến bên ai",
+            "Đường xa xăm ta vẫn sẽ cứ đi dù tình ngang trái",
+            "Nhặt trăm hoa, kết đôi lời",
+            "Có bao năm kiếp này",
+            "Nguyện bên em dẫu sai ý trời",
+            "Chàng vượt chông gai, mây mù giăng tứ phương",
+            "Muôn trùng xa để đến bên ai",
+            "Đường xa xăm ta vẫn sẽ cứ đi dù tình ngang trái",
+            "Nhặt trăm hoa, kết đôi lời",
+            "Có bao năm kiếp này",
+            "Nguyện bên em dẫu sai ý trời",
+            "Ngước lên cao tựa lưng góc trần",
+            "Vài đôi câu hỏi trời kia thấu chăng",
+            "Nghìn dặm xa mệt không lơi, chân rã rời",
+            "Thì ta vẫn nghịch thiên để tìm em"
+        ];
+        let index = 0;
+
+        const intervalId = setInterval(() => {
+            document.getElementById("lyrics").innerHTML += lyrics[index] + "<br>"; 
+            index++;
+            if (index >= lyrics.length) {
+                clearInterval(intervalId); 
+            }
+        }, 1000);
+    </script>
+    </script>
+
+
+
+    <script src="bai1.js"></script>
+</body>
+</html>

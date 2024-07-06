@@ -1,9 +1,29 @@
 //edt du lieu
 export function edititem(id){
+    //lay ds product tu local storage
+    product_list = JSON.parse(localStorage.getItem('cards'));
+
+
+    //lay du lieu cu
+    const currentproduct =product_list.filter((e)=>e.id===id)[0];
+
+    //thay doi du lieu (dom)
+
+    //tat popup
+    document.getElementById('editpopup').classList.remove('show');
+
 
 }
 
+//bat popup
+export function openPopup(){
+    document.getElementById('editpopup').onclick = ()=>{
+        document.getElementById('editpopup').classList.add('show');
 
+    }
+
+
+}
 
 
 //xo du lieu 
